@@ -38,6 +38,16 @@ public class UserInMemoryDao implements UserDao {
 
     @Override
     public User get(int id) {
+        /*
+        User userToReturn = null;
+        for(User user: this.users){
+            if(user.getId() == id){
+                userToReturn = user;
+                break;
+            }
+        }
+        yukarıdaki kod aşağıdakinin basit hali hocamız ileride aşağıdakini gösterecektir
+        */
         User userToReturn = this.users.stream()
                 .filter((user) -> user.getId() == id)
                 .findFirst()
@@ -48,7 +58,7 @@ public class UserInMemoryDao implements UserDao {
     @Override
     public User getByMail(String mail) {
         User userToReturn = this.users.stream()
-                .filter((user) -> user.getMail().equals(mail) )
+                .filter((user) -> user.getMail().equals(mail))
                 .findFirst()
                 .orElse(null);
         return userToReturn;

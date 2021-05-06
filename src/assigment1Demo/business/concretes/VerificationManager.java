@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class VerificationManager implements VerificationService {
     private MailSender mailSender;
     public VerificationManager(MailSender mailSender){
-        mailSender = mailSender;
+        this.mailSender = mailSender;
     }
     @Override
     public boolean verificate(String mail) {
@@ -21,7 +21,7 @@ public class VerificationManager implements VerificationService {
             System.out.println("HATA!!!");
         }
         Scanner scan = new Scanner(System.in);
-        System.out.print("Lütfen gelen kodu doğru giriniz: ");
+        System.out.print("Lütfen gelen kodu giriniz: ");
         String enteredCode = scan.nextLine();
         if(!code.equals(enteredCode)){
             return false;

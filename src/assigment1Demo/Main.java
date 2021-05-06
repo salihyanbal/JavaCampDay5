@@ -56,6 +56,8 @@ public class Main {
                 case 0:
                     System.out.println(mainMessage);
                     break;
+                default:
+                    System.out.println("Lütfen doğru seçim yapınız.");
             }
             loggedloop:
             while (loggedIn){
@@ -68,10 +70,12 @@ public class Main {
                     case 2:
                         System.out.println(mainMessage);
                         loggedIn = false;
-                        break loggedloop;
+                        break;
                     case 0:
                         System.out.println(loggedMessage);
                         break;
+                    default:
+                        System.out.println("Lütfen doğru seçim yapınız.");
                 }
             }
         }
