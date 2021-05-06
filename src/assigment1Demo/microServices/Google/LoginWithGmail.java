@@ -5,6 +5,7 @@ import java.util.List;
 
 public class LoginWithGmail {
     static List<Gmail> gmails;
+
     public LoginWithGmail(){
         gmails = new ArrayList<>();
         gmails.add(new Gmail("Test","test","test@gmail.com","1234567"));
@@ -22,6 +23,6 @@ public class LoginWithGmail {
                 .findFirst()
                 .orElse(null);
         return gmailToReturn;
-    };
+    }
 
 }
