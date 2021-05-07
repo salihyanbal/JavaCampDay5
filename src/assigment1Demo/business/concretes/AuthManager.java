@@ -38,7 +38,8 @@ public class AuthManager implements AuthService {
     @Override
     public boolean register(User user) {
         //checkmailcorrect ve  ad soyad şifre uzunluk kontrolü business içinde yanlıştır, hocamız daha validate'i anlatmadığı için buraya eklemek zorunda kaldım
-        if(!(this.userService.checkMailCorrect(user.getMail()) && this.userService.getByMail(user.getMail()) == null &&
+        if(!(this.userService.checkMailCorrect(user.getMail()) &&
+                this.userService.getByMail(user.getMail()) == null &&
                 user.getFirstName().length() >= 2 && user.getLastName().length() >= 2 &&
                 user.getPassword().length() >= 6)){
             System.out.println("Kayıt başarısız...");
