@@ -57,10 +57,19 @@ public class UserInMemoryDao implements UserDao {
 
     @Override
     public User getByMail(String mail) {
-        User userToReturn = this.users.stream()
+
+        User userToReturn = null;
+        for(User user: this.users){
+            if(user.getMail().equals(mail)){
+                userToReturn = user;
+                break;
+            }
+        }
+
+        /*User userToReturn = this.users.stream()
                 .filter((user) -> user.getMail().equals(mail))
                 .findFirst()
-                .orElse(null);
+                .orElse(null);*/
         return userToReturn;
     }
 
